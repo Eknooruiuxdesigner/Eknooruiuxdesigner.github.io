@@ -1,0 +1,401 @@
+html,body{
+    overflow-x: hidden;
+}
+html{
+    font-size: $base-font-size + px;
+    @include breakpoint(ipad){
+        font-size: $base-font-size-14 + px;
+    }
+}
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $color-black;
+    background-color: $color-white;
+    line-height: 1;
+    @include fontFamily()
+}
+
+body,
+html{
+	padding: 0;
+	margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,li
+{
+    margin: 0;
+    padding: 0;
+    font-family: $sansation-font;
+}
+
+h1,h2,h3,h4,h5,h6,p{ 
+    color: $color-black;
+    margin-bottom: 10px;
+}
+
+svg path,
+svg
+{
+    transition: all ease-in-out 0.3s; 
+}
+ul,ol,li
+{ 
+    list-style: none;
+}
+
+a
+{    
+    color: $color-black;     
+   
+    &:hover
+    {
+        color:lightgray; 
+        opacity:1;
+    }
+}
+
+ 
+p{
+    margin-bottom: 20px;
+    font-family: "Sansation", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    color: $color-primary-900;
+
+    &:last-of-type,
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.lead-text{
+    @include fontsize(24);
+    font-weight: bolder;
+    @include breakpoint(ipad){
+        @include fontsize(20);
+    }
+    @include breakpoint(mobile){
+        @include fontsize(18);
+    }
+}
+
+.text-12{
+    @include fontsize(12);
+    @include breakpoint(mobile){
+        @include fontsize(11);
+    }
+}
+.text-14{
+    @include fontsize(14);
+    @include breakpoint(mobile){
+        @include fontsize(12);
+    }
+}
+.text-15{
+    @include fontsize(15);
+    @include breakpoint(mobile){
+        @include fontsize(14);
+    }
+}
+.text-16{
+    @include fontsize(16);
+    @include breakpoint(mobile){
+        @include fontsize(14);
+    }
+}
+.text-18{
+    @include fontsize(18);
+    @include breakpoint(mobile){
+        @include fontsize(16);
+    }
+}
+.text-20{
+    @include fontsize(20);
+    @include breakpoint(ipad){
+        @include fontsize(18);
+    }
+}
+.text-22{
+    @include fontsize(22);
+    @include breakpoint(mobile){
+        @include fontsize(20);
+    }
+}
+.text-24{
+    @include fontsize(24);
+    @include breakpoint(mobile){
+        @include fontsize(22);
+    }
+}
+.text-26{
+    @include fontsize(26);
+    @include breakpoint(mobile){
+        @include fontsize(24);
+    }
+}
+.text-30{
+    @include fontsize(30);
+    @include breakpoint(normal){
+        @include fontsize(27);
+    }
+}
+.text-32{
+    @include fontsize(32);
+    @include breakpoint(normal){
+        @include fontsize(28);
+    }
+}
+.text-34{
+    @include fontsize(34);
+    @include breakpoint(normal){
+        @include fontsize(32);
+    }
+}
+.text-36{
+    @include fontsize(36);
+    @include breakpoint(normal){
+        @include fontsize(34);
+    }
+    @include breakpoint(ipad){
+        @include fontsize(32);
+    }
+    @include breakpoint(mobile){
+        @include fontsize(30);
+    }
+}
+.text-56{
+    @include fontsize(56);
+    @include breakpoint(normal){
+        @include fontsize(46);
+    }
+}
+.heading-90{
+    @include fontsize(90);
+    @include breakpoint(desktop){
+        @include fontsize(70);
+    }
+    @include breakpoint(normal){
+        @include fontsize(60);
+    }
+    @include breakpoint(ipad){
+        @include fontsize(55);
+    }
+    @include breakpoint(mobile){
+        @include fontsize(48);
+    }
+}
+.line-height-small{
+    line-height: 1
+}
+.line-height-small-medium{
+    line-height: 1.1
+}
+.line-height-regular{
+    line-height: 1.5
+}
+.line-height-medium{
+    line-height: 1.8
+}
+.line-height-large{
+    line-height: 2
+}
+.text-cap{
+    text-transform: capitalize
+}
+.uppercase{
+    text-transform: uppercase;
+} 
+
+
+.colorWhite{
+    color: $color-white;
+}
+.colorBlack{
+    color: $color-black;
+}
+.primary-bg-900{
+    background-color: $color-primary-900;
+}
+.primary-bg-400{
+    background-color: $color-primary-400;
+}
+.primary-bg-300{
+    background-color: $color-primary-300;
+}
+.primary-bg-200{
+    background-color: $color-primary-200;
+}
+
+.primary-text-900{
+    color: $color-primary-900;
+}
+.primary-text-400{
+    color: $color-primary-400;
+}
+.primary-text-300{
+    color: $color-primary-300;
+}
+.primary-text-200{
+    color: $color-primary-200;
+}
+
+.green-text-500{
+    color: $color-green-900;
+}
+.white-bg{
+    background-color: $color-white;
+}
+.white-bg-16{
+    background-color: $color-white-16;
+}
+.black-bg{
+    background-color:$color-black;
+}
+.grey-bg-100{
+    background-color: $color-grey-100;
+}
+.grey-bg-200{
+    background-color: $color-grey-200;
+}
+.grey-bg-300{
+    background-color: $color-grey-300;
+}
+.grey-bg-400{
+    background-color: $color-grey-400;
+}
+.grey-bg-700{
+    background-color: $color-grey-700;
+}
+.grey-bg-900{
+    background-color: $color-grey-900;
+}
+
+.blue-bg-100{
+    background-color: $color-blue-100;
+}
+.blue-bg-200{
+    background-color: $color-blue-200;
+}
+.blue-bg-300{
+    background-color: $color-blue-300;
+}
+.blue-bg-400{
+    background-color: $color-blue-400;
+}
+.blue-bg-900{
+    background-color: $color-primary-900;
+}
+
+.green-bg-500{
+    background-color: $color-green-900;
+}
+.green-bg-100{
+    background-color: $color-green-100;
+}
+
+
+.box-shadow-bl{
+box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.1);
+}
+.container-fluid{
+    max-width: 1920px;
+}
+.container{
+    @include breakpoint(min-desktop){
+        max-width: 1330px;
+    }
+}
+.section-padding{
+    padding: 70px 0;
+
+    @include breakpoint(normal){
+        padding: 50px 0;
+    }
+}
+
+.large-heading{
+    @include fontsize(135);
+    font-weight: bolder;
+}
+
+/* Custom list style for .list-unstyled-regular: show dot before each li */
+.list-unstyled-regular {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.list-unstyled-regular li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.list-unstyled-regular li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.5em;
+    height: 0.5em;
+    background: #222; /* or your preferred color */
+    border-radius: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+}
+.vertical-align-middle{
+    vertical-align: middle;
+}
+
+.horizontal-list {
+    display: flex;
+    li{
+        margin-right: 15px;
+        color: transparent;
+        -webkit-text-stroke: 1px $color-primary-500;
+        font-size: 29px;
+        @include breakpoint(ipad) {
+            font-size: 20px;
+        }
+        @include breakpoint(mobile) {
+            font-size: 15px;
+        }
+        // @include breakpoint(mobile) {
+        //     font-size: 20px;
+        // }
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &.circle-horizontal-list{
+        li{
+            position: relative;
+            padding: 0 10px 0 20px;
+            margin-right: 0;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                border: 1px solid $color-primary-900; /* circle border only */
+                border-radius: 50%;       /* make it circular */
+                background-color: transparent;
+                transform: translateY(-50%);
+            }
+            &:first-child{
+                padding-left: 0;
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,354 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+
+.banner-home {
+    padding-bottom: 30px;
+}
+
+
+.banner-girl-img {
+    position: absolute;
+    right: 30px;
+    bottom: -30px;
+    width: 100%;
+    height: auto;
+    max-width: 390px;
+    z-index: 9;
+
+    @include breakpoint(normal) {
+        max-width: 300px;
+    }
+    @include breakpoint(ipad) {
+        max-width: 230px;
+    }
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.specialized-wraper {
+    min-height: 110px;
+    padding: 21px 0 35px;
+    @include breakpoint(normal) {
+         padding: 36px 0 35px;
+    }
+}
+
+.specialized-title {
+    margin: 0 0 -25px;
+    @include breakpoint(normal) {
+        margin: 0 0 -13px;
+    }
+}
+
+/* Infinite horizontal scroll animation */
+.infinite-scroll-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background: $color-white;
+    padding: 5px 0;
+}
+
+.infinite-scroll-list {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 20s linear infinite;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    font-family: "Sansation", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: $color-primary-900;
+    @include breakpoint(ipad) {
+        font-size: 15px;
+         gap: 20px;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.infinite-scroll-list li {
+    white-space: nowrap;
+}
+
+//product section css
+.work-item {
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.1);
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    @include breakpoint(mobile) {
+        margin-right: 0;
+    }
+
+    &>img.img-fluid {
+        width: 100%;
+        height: auto;
+        border-radius: 25px;
+    }
+}
+
+.expand-design {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    z-index: 9;
+    animation: rotate-infinite 8s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+        right:0;
+    }
+}
+
+.expand-icon-center {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    animation: rotate-infinite-center 8s linear infinite;
+}
+
+@keyframes rotate-infinite {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-infinite-center {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.illustrator-section {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.illustrator-bg {
+    width: 100%;
+    margin-bottom: -2px;
+}
+
+.illustrator-figure {
+    // height: 377px;
+    // width: 325px;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.illustrator-item {
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.1);
+    margin-bottom: 30px;
+    
+    @include breakpoint(ipad) {
+        margin-bottom: 0;
+    }
+    
+    figure {
+        overflow: hidden;
+        border-radius: 30px;
+
+        img:not(.border-img) {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover>img {
+            transform: scale(1.05);
+        }
+    }
+
+
+
+    .border-img {
+        position: absolute;
+        z-index: 9;
+
+        @include breakpoint(normal) {
+            max-width: 83%;
+            max-height: 100%;
+        }
+        @include breakpoint(ipad) {
+            display: none;
+        }
+
+        &.border-1 {
+            top: -20px;
+            left: -20px;
+        }
+
+        &.border-2 {
+            bottom: -20px;
+            right: -20px;
+        }
+
+        &.border-3 {
+            top: 20px;
+            left: 20px;
+        }
+
+        &.border-4 {
+            top: 20px;
+            right: 20px;
+        }
+
+        &.border-5 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        &.border-6 {
+            top: 20px;
+            left: 20px;
+        }
+
+        &.border-7 {
+            bottom: -20px;
+            left: -20px;
+            top: -20px;
+            height: 115%;
+        }
+
+        &.border-8 {
+            top: -20px;
+            left: -25px;
+        }
+
+        &.border-9 {
+            top: -20px;
+            right: -20px;
+        }
+    }
+}
+
+.illustrator-side-img {
+    position: absolute;
+    z-index: 1;
+
+    &.illustrator-top-left {
+        height: 667px;
+        width: auto;
+        left: -229px;
+        top: 90px;
+    }
+
+    &.illustrator-bottom-right {
+        height: 847px;
+        width: auto;
+        right: -220px;
+        bottom: -46px;
+    }
+}
+
+.middle-section-illustrator {
+    position: relative;
+    z-index: 9;
+}
+
+.testimonial-item {
+    background-color: $color-grey-800;
+    padding: 20px;
+    border-radius: 30px;
+    position: relative;
+    filter: -webit-drop-shadow(0 28px 15px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 28px 15px rgba(0, 0, 0, 0.1));
+
+    .testimonial-item-content {
+        background-color: $color-white;
+        padding: 20px 60px 30px;
+        border-radius: 30px;
+    }
+
+    .qoutes-icon {
+        position: absolute;
+        bottom: -21px;
+        left: 70px;
+    }
+
+    .down-arrow {
+        position: absolute;
+        bottom: -31px;
+        right: 70px;
+    }
+}
+
+.site-footer {
+    background-color: $color-primary-200;
+
+    .site-footer-top {
+        padding: 50px 0;
+    }
+
+    .copyright-wraper {
+        background-color: $color-primary-300;
+        padding: 10px 0;
+    }
+}
+
+.sm-links {
+    .btn-sm-icon {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+ .fullscreen-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      overflow: auto; /* allow scrolling */
+      z-index: 9999;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .fullscreen-container img {
+      display: block;
+      margin: auto;
+      max-width: none;  /* allow full resolution */
+      max-height: none;
+    }
+    
+    

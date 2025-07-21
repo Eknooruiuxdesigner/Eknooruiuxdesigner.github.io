@@ -1,0 +1,36 @@
+.work-with-me-banner-img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    top: -80px;
+
+    @include breakpoint(normal){
+        top: 0;
+    }
+}
+
+.banner-with-me-work{
+    position: relative;
+    z-index: 2;
+}
+.box-whether-icon{
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+}
+
+.card{
+    border-radius: 17px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.my-goal-section{
+    padding: 30px;
+}
+
+.what-I-offer-wraper{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

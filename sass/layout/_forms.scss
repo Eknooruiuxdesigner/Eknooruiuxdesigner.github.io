@@ -1,0 +1,71 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+.form-control{
+    font-size: 16px;
+    font-weight: normal;
+    color: $color-black;
+    height: 50px;
+    box-shadow: inset 0 1px 6px rgba($color: #000000, $alpha: 0.1);
+    border: 1px solid $color-blue-300;
+    border-radius: 50px;
+    background-color: $color-white;
+    
+    @include breakpoint(desktop){
+        height: 48px;
+    }
+    @include breakpoint(mobile){
+        height: 46px;
+        font-size: 14px;
+    }
+    &:focus,&:hover{
+        box-shadow: none;
+    }
+
+    &-style-2{ 
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #B7B7B7;
+    }
+    &-color-100{ 
+        background-color:$color-blue-100;
+    }
+    &.form-control-textarea{
+        padding: 20px;
+        border-radius: 20px;
+        resize: none;
+        height: 150px;
+    }
+    &.form-select-country{
+        border-radius: 0;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+
+    }
+}
+
+
+input[type=checkbox], 
+input[type=radio]{
+    appearance: none !important;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.10em;
+    box-shadow: inset 0 2px 2px rgba($color: #000000, $alpha: 0.2);
+    margin-right: 10px;
+
+    &:focus{
+        outline: none;
+        box-shadow: inset 0 2px 2px rgba($color: #000000, $alpha: 0.2);
+        background-color: $color-primary-900;
+        border-color: $color-primary-900;
+    }
+}
+
+.form-check{
+    margin-top:0.6rem;
+}
+
+.form-label-custom{
+    font-size: $base-font-size-14;
+}

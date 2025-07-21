@@ -1,0 +1,31 @@
+.btn{
+    @include border-radius(10px);
+    @include fontsize(16);
+    @include is_Btn($color-primary-900, $color-white, $color-primary-400, $color-white);
+    @include transition;
+    padding: 10px 15px;
+    @include fontFamily(700);
+    border: 1px solid $color-primary-900;
+    //@include box-shadow(5px 5px 15px rgba(0,0,0,0.4));
+    // filter: -webit-drop-shadow(6px 6px 7px rgba(0,0,0,0.2));
+    // filter: drop-shadow(6px 6px 7px rgba(0,0,0,0.2));
+
+    &-primary {
+    @include is_Btn($color-primary-900, $color-white, $color-primary-400, $color-white);
+    }
+    &-uppercase{
+        text-transform: uppercase;
+    }
+}
+
+.btn-icon-vertical{
+    margin-top: -5px;
+    display: inline-block;
+
+    &.left{
+        margin-right: 10px;
+    }
+    &.right{
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,251 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+header{
+    // box-shadow: 0 10px 8px rgba(0,0,0, 0.14);
+    background-color: $color-white;
+    z-index: 99;
+    position: relative;
+    padding: 20px 0;
+    
+    .container,
+    .container-fluid{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    .header-elem-left{
+        @include breakpoint(mobile){
+            padding: 5px 0;
+        }
+    }
+    img.site-logo{
+        @include breakpoint(normal){
+            max-width: 150px
+        }
+        @include breakpoint(ipad){
+            max-width: 70px
+        }
+    }
+}
+.header-elem-right{
+    // @include breakpoint(mobile){
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     width: 100%;
+    //     height: 100vh;
+    //     z-index: 99999999999;
+    //     max-width: 100%;
+    //     z-index: -1;
+    //     visibility: hidden;
+    // }
+    &::after{
+        // @include breakpoint(mobile){
+        //     content: '';
+        //     background-color: rgba($color: #000000, $alpha: 0.8);
+        //     width: 100%;
+        //     height: 100%;
+        //     position: absolute;
+        //     top: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     right: 0;
+        //     opacity: 0;
+        //     transition: all ease-in-out 0.3s;
+        //     visibility: hidden;
+        // }
+    }
+    // .close-btn{
+    //     @include breakpoint(mobile){
+    //         position: absolute;
+    //         top: 0;
+    //         left: -100px;
+    //         width: 35px;
+    //         height: 35px;
+    //         border-radius: 50px;
+    //         background-color: $color-primary-900;
+    //         color: $color-white;
+    //         border: 0;
+    //         visibility: hidden;
+    //     }
+    // }
+
+    // &.closeSlide{
+    //     &::after{
+    //         @include breakpoint(mobile){
+    //             content: '';
+    //             opacity: 0;
+    //             visibility: hidden;
+    //         }
+    //     }
+    //     ul.nav-lists{
+    //         @include breakpoint(mobile){
+    //             transform: translateX(-270px);
+    //             visibility: hidden;
+    //         }
+    //     }
+    // }
+
+    // &.openSlide{
+    //     z-index: 1;
+    //     visibility: visible;
+    //     &::after{
+    //         @include breakpoint(mobile){
+    //             content: '';
+    //             opacity: 1;
+    //             visibility: visible;
+    //         }
+    //     }
+    //     ul.nav-lists{
+    //         @include breakpoint(mobile){
+    //             transform: translateX(0);
+    //             visibility: visible;
+    //         }
+    //     }
+    //     .close-btn
+    //     {
+    //         @include breakpoint(mobile){
+    //             z-index: 9999;
+    //             left: calc(240px - 17px);
+    //             visibility: visible;
+    //         }
+    //     }
+    // }
+}
+
+ul.nav-lists{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // @include breakpoint(mobile){
+    //     max-width: 240px;
+    //     height: 100%;
+    //     justify-content: flex-start;
+    //     background-color: $color-white;
+    //     flex-direction: column;
+    //     padding-top: 60px;
+    //    transform: translateX(-270px);
+    //    transition: all ease-in-out 0.3s;
+    //    z-index: 999;
+    //    position: relative;
+    // }
+
+    li{
+        &:not(:last-child){
+            margin-right: 30px;
+            @include breakpoint(ipad){
+                margin-right: 15px;
+            }
+        }   
+        
+        .nav-link{
+            padding:0;
+            color: $color-primary-900;
+            position: relative;
+            overflow: hidden;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-family: "Sansation", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+
+            @include breakpoint(ipad){
+                font-size: 14px;
+            }
+
+            &:after{
+                content:'';
+                content: "";
+                width: 100%;
+                height: 1px;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                background-color: $color-primary-900;
+                z-index: 9;
+                left: -100%;
+                @include transition();
+            }
+
+            &:hover,
+            &.active{
+                color: $color-primary-900;
+
+                &:after{
+                    left: 0;
+                }
+            }
+        }
+
+        &.active{
+            .nav-link{   
+                    background-color: $color-blue-200;
+                    color: $color-primary-900;
+    
+                    &:after{
+                        left: 0;
+                    }
+            }
+        }
+    }
+}
+
+.loader_wraper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba($color: $color-white, $alpha: 0.9);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+        width: 48px;
+        height: 48px;
+        border: 3px solid ;
+        border-color: $color-primary-900 transparent;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      .loader::after {
+        content: '';  
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 6px solid;
+        border-color: $color-primary-900 transparent;
+      }
+      
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      } 
+}
+
+.burger-menu {
+    width: 35px;
+    height: 35px;
+    border: 0;
+    background-color: transparent;
+}

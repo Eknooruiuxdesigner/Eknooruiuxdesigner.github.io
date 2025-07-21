@@ -49,7 +49,7 @@ jQuery(function () {
     slidesToScroll: 1,
     margin: 5,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     prevArrow: jQuery('.custom-prev'),
     nextArrow: jQuery('.custom-next'),
     responsive: [{
@@ -68,6 +68,35 @@ jQuery(function () {
       breakpoint: 479,
       settings: {
         slidesToShow: 1
+      }
+    }]
+  });
+  // slick slider
+  jQuery('.gallery-container').slick({
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    infinite: false,
+    margin: 10,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    prevArrow: jQuery('.custom-prev'),
+    nextArrow: jQuery('.custom-next'),
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3
+      },
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 3
+      },
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2
+      },
+      breakpoint: 479,
+      settings: {
+        slidesToShow: 2
       }
     }]
   });

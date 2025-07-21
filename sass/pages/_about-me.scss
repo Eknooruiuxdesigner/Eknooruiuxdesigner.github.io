@@ -14,16 +14,24 @@
 .slider-item-slick{
     padding:5px 10px 20px;
     text-align: center;
+    transition: all ease-in-out 0.3s;
     .certify-slider-item{
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         text-align: center;
         padding: 10px;
+        transition: all ease-in-out 0.3s;
 
         img{
             max-width: 100%;
             height: auto;
             display: inline-block;
+        }
+    }
+    &:hover{
+        .certify-slider-item{
+            margin-top: -5px;
+            transform: scale(1.05);
         }
     }
 }
@@ -66,9 +74,15 @@
     bottom: -30px;
     left: -80px;
 }
+    .gallery-item{
+        padding: 20px;
 
+        .gallery-inner{
+            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1),5px 10px 15px rgba(0, 0, 0, 0.1),5px 10px 15px rgba(0, 0, 0, 0.1),5px 10px 15px rgba(0, 0, 0, 0.1),5px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    }
     .gallery-item img {
-      width:auto;
-      height: 205px;
+      width:100%;
+      height: auto;
       display: block;
     }
